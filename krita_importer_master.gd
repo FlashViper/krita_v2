@@ -94,8 +94,8 @@ func import_layers_as_atlas(source_file: String, save_path: String, options: Dic
 	var include_colors := options.get("colors_include", [])
 	var exclude_colors := options.get("colors_exculde", [])
 	var include_hidden := options.get("hidden_include", false)
-	var colors_to_combine := options.get("combined_colors", [3])
-	var colors_to_ignore := options.get("ignored_colors", [8])
+	var colors_to_combine := options.get("combined_colors", 1 << 3)
+	var colors_to_ignore := options.get("ignored_colors", 1 << 8)
 	
 	var all_layers : Array[LayerData] = krita_document.layers.duplicate()
 	var layers_to_save : Array[LayerData] = []
